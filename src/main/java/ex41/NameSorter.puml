@@ -1,0 +1,25 @@
+@startuml
+class Person{
+String firstname
+String lastname
+set()
+get()
+}
+
+class Record{
+Map people
+Int recordCount
+sortByAlpha()
+addPeople()
+getListofPeople()
+getRecordCount()
+}
+
+class App{
+readFile()
+print()
+}
+
+App o-- Record
+Record o-- Person
+@enduml

@@ -13,11 +13,11 @@ sortByAlpha()
 addPeople()
 getListofPeople()
 getRecordCount()
+printRecord()
 }
 
 class App{
 fileName:String
-print()
 }
 
 class FileManager{

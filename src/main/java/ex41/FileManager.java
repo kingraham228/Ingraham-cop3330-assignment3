@@ -1,5 +1,8 @@
 package ex41;
-
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Kate Ingraham
+ */
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,8 +14,7 @@ public class FileManager {
 
     //Find the file
     public Path findFile(String fileName) {
-        Path filePath = Paths.get(fileName);
-        return filePath;
+        return Paths.get(fileName);
     }
 
     //Read information from the file

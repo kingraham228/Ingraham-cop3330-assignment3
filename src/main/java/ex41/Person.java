@@ -7,9 +7,9 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    public Person(String firstName, String lastName){
-        this.firstName = firstName;
+    public Person(String lastName, String firstName){
         this.lastName = lastName;
+        this.firstName = firstName;
     }
 
     public String getFirstName() {

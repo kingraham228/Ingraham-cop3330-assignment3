@@ -1,14 +1,14 @@
 @startuml
 class Person{
-String firstname
-String lastname
-set()
-get()
+firstname : String
+lastname : String
+getFirstname()
+getLastname()
 }
 
 class Record{
-Map people
-Int recordCount
+people : List
+recordCount : int
 sortByAlpha()
 addPeople()
 getListofPeople()
@@ -16,10 +16,16 @@ getRecordCount()
 }
 
 class App{
-readFile()
+fileName:String
 print()
+}
+
+class FileManager{
+findFile()
+readFile()
 }
 
 App o-- Record
 Record o-- Person
+App o-- FileManager
 @enduml

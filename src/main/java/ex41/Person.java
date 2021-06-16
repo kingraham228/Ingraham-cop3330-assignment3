@@ -4,8 +4,8 @@ package ex41;
  *  Copyright 2021 Kate Ingraham
  */
 public class Person {
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
 
     public Person(String lastName, String firstName){
         this.lastName = lastName;

@@ -7,19 +7,17 @@ import java.util.*;
 
 
 public class Record {
-    private ArrayList<Person> record = new ArrayList<>();
-    private int recordCount;
+    private final ArrayList<Person> record = new ArrayList<>();
+    private final int recordCount;
 
     //Convert file data into people record
     public Record(ArrayList<String> fileData){
-        Iterator<String> iterator = fileData.iterator();
-        while (iterator.hasNext()){
+        for (String fullName : fileData) {
             //Split full name into first and last name
-            String fullName = iterator.next();
             String[] namePieces = fullName.split(" ");
             String lastName = namePieces[0];
             String firstName = namePieces[1];
-            Person addPerson = new Person(lastName,firstName);
+            Person addPerson = new Person(lastName, firstName);
             //Add people to the record
             record.add(addPerson);
         }
@@ -36,8 +34,8 @@ public class Record {
 
     //Sort the record alphabetically
     public void sortRecord(){
-        Collections.sort(record, Comparator.comparing(Person::getFirstName));
-        Collections.sort(record,Comparator.comparing(Person::getLastName));
+        record.sort(Comparator.comparing(Person::getFirstName));
+        record.sort(Comparator.comparing(Person::getLastName));
    }
 
    //Print record

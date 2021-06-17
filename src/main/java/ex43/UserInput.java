@@ -1,19 +1,19 @@
 package ex43;
-
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /*
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 public class UserInput {
     private static final Scanner input = new Scanner(System.in);
     //Prompt for the name of the site
     public String getSiteName(){
         String siteName;
-        int inputValidation = 0;
+        int inputValidation;
         do {
             System.out.println("What is the name of your website?");
             siteName = input.nextLine();
@@ -39,7 +39,7 @@ public class UserInput {
     //Ask if the user wants a folder for JavaScript files
     public boolean askJSFiles(){
         String answer;
-        int validator =0;
+        int validator;
         do {
             System.out.println("Do you want a folder for JavaScript (y/n)?");
             answer = input.nextLine();
@@ -51,17 +51,12 @@ public class UserInput {
                 validator = -1;
             }
         } while (validator<0);
-        if (answer.equalsIgnoreCase("y")){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return answer.equalsIgnoreCase("y");
     }
     //Ask if the user wants a folder for CSS files
     public boolean askCSSFiles(){
         String answer;
-        int validator =0;
+        int validator;
         do {
             System.out.println("Do you want a folder for CSS (y/n)?");
             answer = input.nextLine();
@@ -73,11 +68,6 @@ public class UserInput {
                 validator = -1;
             }
         } while (validator<0);
-        if (answer.equalsIgnoreCase("y")){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return answer.equalsIgnoreCase("y");
     }
 }

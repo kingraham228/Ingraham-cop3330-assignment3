@@ -18,14 +18,14 @@ public class Website {
     }
 
     //Generate index.html with
-    //name of site in the <title> tag
-    //author in the <meta>tag
     public String makeHTML(){
 
         try(Formatter output = new Formatter("src/main/java/ex43/website/index.html")){
             output.format("<HTML>");
             output.format("<HEAD>");
+            //name of site in the <title> tag
             output.format("<TITLE>"+siteName+"</TITLE>");
+            //author in the <meta>tag
             output.format("<meta name = \"author\" content = \""+siteAuthor+"\">");
             output.format("</HEAD>");
             output.format("<BODY>");

@@ -37,11 +37,15 @@ public class SalRecord {
 
    //Print record
     public void printRecord(){
-        System.out.printf("Total of %d names%n", recordCount);
-        System.out.println("------------------------------");
+        String header1 = "Last";
+        String header2 = "First";
+        String header3 = "Salary";
+
+        System.out.printf("%-15s %-15s %-15s%n",header1,header2,header3);
+        System.out.println("-----------------------------------------------");
         for (int i=0; i<recordCount; i++){
             Employee printPerson = record.get(i);
-            System.out.printf("%s %s%n", printPerson.getLastName(), printPerson.getFirstName());
+            System.out.printf("%-15s %-15s %-15s%n", printPerson.getLastName(), printPerson.getFirstName(), printPerson.getSalary());
         }
 
     }

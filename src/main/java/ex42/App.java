@@ -18,9 +18,9 @@ public class App {
         Path filePath = newFile.findFile(fileName);
         ArrayList<String> fileData = newFile.readFile(filePath);
         //Turn file data into records
-        Record names = new Record(fileData);
+        SalRecord record = new SalRecord(fileData);
         //print the records as a table, evenly spaced
-        names.printRecord();
+        record.printRecord();
 
 
 

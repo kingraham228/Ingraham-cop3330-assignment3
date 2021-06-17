@@ -17,12 +17,12 @@ class Record{
 }
 
 class App{
-fileName:String
+- fileName:String
 }
 
 class FileManager{
-findFile()
-readFile()
++findFile()
++readFile()
 }
 
 App o-- Record

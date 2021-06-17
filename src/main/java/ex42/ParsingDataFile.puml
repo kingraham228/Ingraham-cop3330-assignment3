@@ -1,18 +1,18 @@
 @startuml
 class App{
-fileName: String
+-fileName: String
 }
 class Record{
-people: List
-recordCount: int
-addPeople();
-pringPeople();
+-people: List
+-recordCount: int
++addPeople();
++printPeople();
 }
 
 class Person{
 - firstName: String
 - lastName: String
-salary: int
+-salary: int
 + getFirstName()
 + getLastName()
 + getSalary()
@@ -20,8 +20,10 @@ salary: int
 
 class FileManager{
 + findFile()
-readFile()
++readFile()
 }
 
 App o-- FileManager
+App o-- Record
+Record o--Person
 @enduml

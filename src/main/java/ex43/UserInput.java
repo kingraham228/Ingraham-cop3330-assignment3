@@ -18,7 +18,7 @@ public class UserInput {
             System.out.println("What is the name of your website?");
             siteName = input.nextLine();
             //Make sure the site name doesn't include illegal characters
-            Pattern webPattern = Pattern.compile("[^a-zA-Z0-9]");
+            Pattern webPattern = Pattern.compile("[^a-zA-Z0-9 ]");
             Matcher matcher = webPattern.matcher(siteName);
             boolean stringIllegalCharacters = matcher.find();
             if(stringIllegalCharacters){

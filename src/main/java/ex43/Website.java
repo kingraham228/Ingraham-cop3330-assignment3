@@ -9,8 +9,8 @@ import java.util.Formatter;
 import java.util.FormatterClosedException;
 
 public class Website {
-    private String siteName;
-    private String siteAuthor;
+    private final String siteName;
+    private final String siteAuthor;
 
     public Website(String siteName,String siteAuthor){
         this.siteName = siteName;
@@ -20,9 +20,9 @@ public class Website {
     //Generate index.html with
     //name of site in the <title> tag
     //author in the <meta>tag
-    public void makeHTML(){
+    public String makeHTML(){
 
-        try(Formatter output = new Formatter("src/main/java/ex43/index.html")){
+        try(Formatter output = new Formatter("src/main/java/ex43/website/index.html")){
             output.format("<HTML>");
             output.format("<HEAD>");
             output.format("<TITLE>"+siteName+"</TITLE>");
@@ -35,5 +35,7 @@ public class Website {
         }catch(SecurityException | FileNotFoundException | FormatterClosedException e){
             e.printStackTrace();
         }
+        return "Created .src\\main\\java\\ex43\\website\\index.html";
     }
+
 }

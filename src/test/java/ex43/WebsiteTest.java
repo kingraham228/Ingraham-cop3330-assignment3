@@ -6,16 +6,23 @@ package ex43;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class WebsiteTest {
 
     @Test
     @DisplayName("File Creating Test")
     void makeHTML() {
-        String siteName = "Test3";
+        String siteName = "Testing";
         String author = "Kate I";
         Website testWeb = new Website(siteName,author);
-        testWeb.makeHTML();
+        String actual = testWeb.makeHTML();
+        String expected = "Created .src\\main\\java\\ex43\\website\\index.html";
+
+        assertEquals(expected, actual);
+
     }
+
+
 }

@@ -1,5 +1,6 @@
 @startuml
 class App{
+
 }
 
 class Website{
@@ -8,10 +9,10 @@ class Website{
 +makeHTML()
 }
 
-class Fmanager{
+class FolderManager{
 +makeJSFolder()
 +makeCSSFolder()
-+makeFiles()
++printFolderStatus()
 }
 
 class UserInput{
@@ -22,6 +23,6 @@ class UserInput{
 }
 
 App o-- UserInput
-App o-- Fmanager
+App o-- FolderManager
 App o-- Website
 @enduml

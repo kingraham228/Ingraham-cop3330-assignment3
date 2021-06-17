@@ -5,9 +5,10 @@ package ex42;
  */
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.nio.file.Path;
 import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SalRecordTest {
 
@@ -22,8 +23,10 @@ class SalRecordTest {
         SalRecord newSalRecord = new SalRecord(fileData);
         ArrayList<Employee> testRecord = newSalRecord.getRecord();
         Employee testEmp = testRecord.get(0);
-        String actual = testEmp.getLastName()+testEmp.getFirstName()+testEmp.getSalary();
-        String expected = "[Ling,Mai,55900]";
+        String actual = testEmp.getLastName()+" "+testEmp.getFirstName()+" "+testEmp.getSalary();
+        String expected = "Ling Mai 55900";
+
+        assertEquals(expected,actual);
 
 
     }
@@ -39,9 +42,10 @@ class SalRecordTest {
         SalRecord newSalRecord = new SalRecord(fileData);
         ArrayList<Employee> testRecord = newSalRecord.getRecord();
         Employee testEmp = testRecord.get((testRecord.size()-1));
-        String actual = testEmp.getLastName()+testEmp.getFirstName()+testEmp.getSalary();
-        String expected = "[Zarnecki,Sabrina,51500]";
+        String actual = testEmp.getLastName()+" "+testEmp.getFirstName()+" "+testEmp.getSalary();
+        String expected = "Zarnecki Sabrina 51500";
 
+        assertEquals(expected,actual);
 
     }
 
@@ -55,11 +59,12 @@ class SalRecordTest {
 
         SalRecord newSalRecord = new SalRecord(fileData);
         ArrayList<Employee> testRecord = newSalRecord.getRecord();
-        Employee testEmp = testRecord.get(4);
-        String actual = testEmp.getLastName()+testEmp.getFirstName()+testEmp.getSalary();
-        String expected = "[Jones,Chris,34500]";
+        Employee testEmp = testRecord.get(3);
+        String actual = testEmp.getLastName()+" "+testEmp.getFirstName()+" "+testEmp.getSalary();
+        String expected = "Jones Chris 34500";
 
 
+        assertEquals(expected,actual);
     }
 
 

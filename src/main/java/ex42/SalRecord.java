@@ -11,10 +11,10 @@ public class SalRecord {
     private final ArrayList<Employee> record = new ArrayList<>();
     private final int recordCount;
 
-    //Convert file data into people record
+    //Convert file data into employee record
     public SalRecord(ArrayList<String> fileData){
         for (String fullRecord : fileData) {
-            //Split full name into first and last name
+            //Split full string into first and last name and salary
             String[] recordPieces = fullRecord.split(",");
             String lastName = recordPieces[0];
             String firstName = recordPieces[1];
@@ -30,12 +30,8 @@ public class SalRecord {
         return record;
     }
 
-    public int getRecordCount() {
-        return recordCount;
-    }
 
-
-   //Print record
+    //Print record in an evenly spaced table
     public void printRecord(){
         String header1 = "Last";
         String header2 = "First";

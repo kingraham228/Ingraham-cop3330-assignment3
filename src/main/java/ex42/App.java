@@ -1,7 +1,6 @@
 package ex42;
 
-import ex41.FileManager;
-import ex41.Record;
+
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -21,10 +20,6 @@ public class App {
         SalRecord record = new SalRecord(fileData);
         //print the records as a table, evenly spaced
         record.printRecord();
-
-
-
-
 
     }
 

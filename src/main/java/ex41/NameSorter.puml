@@ -26,6 +26,6 @@ class FileManager{
 }
 
 App o-- Record
-Record o-- Person
+Record *-- Person
 App o-- FileManager
 @enduml

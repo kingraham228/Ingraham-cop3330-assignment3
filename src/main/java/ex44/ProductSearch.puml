@@ -1,9 +1,11 @@
 @startuml
 class App{
 }
+
 class Input{
 +getProductName()
 }
+
 class Product{
 -name: String
 -price: String
@@ -12,9 +14,11 @@ class Product{
 
 class JSONRecord{
 -List: Product
++getProductRecord()
 +openJSON()
 +makeList()
 +searchList()
++printSearchResults()
 }
 
 App o-- Input

@@ -5,7 +5,10 @@ package ex44;
  */
 public class App {
     public static void main(String[] args){
-        //Take in Product Name Input
+        //Take in product name input
+        Input userInput = new Input();
+        String productName = userInput.getProductName();
+        //Search for matching JSON element
         //Retrieve current price from JSON
         //Retrieve current quantity from JSON
         //If found, Print product name, price, & quantity

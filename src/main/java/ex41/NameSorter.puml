@@ -13,7 +13,7 @@ class Record{
 + addPeople()
 + getListofPeople()
 + getRecordCount()
-+ printRecord()
++ printRecordToFile()
 }
 
 class App{

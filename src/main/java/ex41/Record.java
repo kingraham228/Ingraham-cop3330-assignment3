@@ -3,6 +3,7 @@ package ex41;
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+import java.io.FileNotFoundException;
 import java.util.*;
 
 
@@ -38,13 +39,16 @@ public class Record {
         record.sort(Comparator.comparing(Person::getLastName));
    }
 
-   //Print record
-    public void printRecord(){
-        System.out.printf("Total of %d names%n", recordCount);
-        System.out.println("------------------------------");
+   //Print record to file
+    public void printRecordToFile(){
+        try(Formatter output = new Formatter("src/main/java/ex41/exercise41_output.text")){
+        output.format("Total of %d names%n", recordCount);
+        output.format("------------------------------%n");
         for (int i=0; i<recordCount; i++){
             Person printPerson = record.get(i);
-            System.out.printf("%s %s%n", printPerson.getLastName(), printPerson.getFirstName());
+            output.format("%s %s%n", printPerson.getLastName(), printPerson.getFirstName());
+        }}catch(SecurityException | FileNotFoundException | FormatterClosedException e){
+            e.printStackTrace();
         }
 
     }

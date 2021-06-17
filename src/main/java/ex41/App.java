@@ -20,8 +20,8 @@ public class App
         //Sort records
         names.sortRecord();
         //Print the total number of people
-        //Print the alphabetized list
-        names.printRecord();
+        //Print the alphabetized list to a file
+        names.printRecordToFile();
 
     }
 

@@ -1,19 +1,19 @@
 @startuml
 class Person{
-firstname : String
-lastname : String
-getFirstname()
-getLastname()
+- firstname : String
+- lastname : String
++ getFirstname()
++ getLastname()
 }
 
 class Record{
-people : List
-recordCount : int
-sortByAlpha()
-addPeople()
-getListofPeople()
-getRecordCount()
-printRecord()
+- people : List
+- recordCount : int
++ sortByAlpha()
++ addPeople()
++ getListofPeople()
++ getRecordCount()
++ printRecord()
 }
 
 class App{

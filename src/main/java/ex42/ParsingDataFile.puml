@@ -1,0 +1,27 @@
+@startuml
+class App{
+fileName: String
+}
+class Record{
+people: List
+recordCount: int
+addPeople();
+pringPeople();
+}
+
+class Person{
+- firstName: String
+- lastName: String
+salary: int
++ getFirstName()
++ getLastName()
++ getSalary()
+}
+
+class FileManager{
++ findFile()
+readFile()
+}
+
+App o-- FileManager
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class App{
+}
+
+class Website{
+- siteName
+- siteAuthor
++makeHTML()
+}
+
+class Fmanager{
++makeJSFolder()
++makeCSSFolder()
++makeFiles()
+}
+
+class UserInput{
++getSiteName()
++getAuthor()
++askJSFiles()
++askCSSFiles()
+}
+
+App o-- UserInput
+App o-- Fmanager
+App o-- Website
+@enduml

@@ -2,14 +2,14 @@
 class App{
 -fileName: String
 }
-class Record{
+class SalRecord{
 -people: List
 -recordCount: int
 +addPeople();
 +printPeople();
 }
 
-class Person{
+class Employee{
 - firstName: String
 - lastName: String
 -salary: int
@@ -24,6 +24,6 @@ class FileManager{
 }
 
 App o-- FileManager
-App o-- Record
-Record o--Person
+App o-- SalRecord
+SalRecord o--Employee
 @enduml

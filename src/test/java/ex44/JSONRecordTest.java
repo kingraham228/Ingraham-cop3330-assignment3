@@ -6,10 +6,8 @@ package ex44;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-
 import java.util.ArrayList;
-import java.util.Map;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -56,5 +54,70 @@ class JSONRecordTest {
 
         assertEquals(expected,actual,.001);
 
+    }
+
+    @Test
+    @DisplayName("Search List Doodad")
+    void searchList_Doodad() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        String searchString = "doodad";
+        String  actual = test.searchList(testArray,searchString);
+        String rName = "Doodad";
+        String rPrice = "5.00";
+        String rquantity = "10";
+        String  expected = String.format("Name: %s%nPrice: %s%nQuantity: %s",rName,rPrice,rquantity);
+
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    @DisplayName("Search List Widget")
+    void searchList_widget() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        String searchString = "widget";
+        String  actual = test.searchList(testArray,searchString);
+        String rName = "Widget";
+        String rPrice = "25.00";
+        String rquantity = "5";
+        String  expected = String.format("Name: %s%nPrice: %s%nQuantity: %s",rName,rPrice,rquantity);
+
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    @DisplayName("Search List Thing")
+    void searchList_thing() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        String searchString = "thing";
+        String  actual = test.searchList(testArray,searchString);
+        String rName = "Thing";
+        String rPrice = "15.00";
+        String rquantity = "5";
+        String  expected = String.format("Name: %s%nPrice: %s%nQuantity: %s",rName,rPrice,rquantity);
+
+
+        assertEquals(expected,actual);
+    }
+
+    @Test
+    @DisplayName("Search List not there")
+    void searchList_notThere() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        String searchString = "iPad";
+        String  actual = test.searchList(testArray,searchString);
+        String  expected = "Sorry, that product was not found in our inventory.";
+
+
+        assertEquals(expected,actual);
     }
 }

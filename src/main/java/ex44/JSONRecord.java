@@ -6,7 +6,6 @@ package ex44;
 
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -14,11 +13,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class JSONRecord {
-   ArrayList<Products.Items> itemList = new ArrayList<>();
+   private ArrayList<Products.Items> itemList = new ArrayList<>();
+   public boolean promptAgain;
 
-    //Import JSON file into a string
+    //Import JSON file into a nested class matching the file
     public void importJSON() {
-        //code adapted from https://attacomsian.com/blog/gson-read-json-file
         try {
             Gson gson = new Gson();
             //read in file
@@ -33,18 +32,41 @@ public class JSONRecord {
         }
 
     }
-
     public ArrayList<Products.Items> getItemList() {
         return itemList;
     }
 
-    //Make a searchable array
     //Search for matching JSON element
+    public String searchList(ArrayList<Products.Items> itemList, String search){
+        ArrayList<Products.Items> result = new ArrayList<>();
+        String strResults;
+        for(int i=0; i< itemList.size(); i++){
+            Products.Items searchItem = itemList.get(i);
+            if(searchItem.name.equalsIgnoreCase(search)){
+                result.add(searchItem);
+            }
+        }
+        //If found, return product name, price, & quantity
+        if(result.size()!=0) {
+            String rName = result.get(0).name;
+            //Retrieve current price from JSON
+            double rPrice = result.get(0).price;
+            //Retrieve current quantity from JSON
+            int rquant = result.get(0).quantity;
+            strResults = String.format("Name: %s%nPrice: %.02f%nQuantity: %d", rName, rPrice, rquant);
+            promptAgain = false;
+            //If not found send out not found message
+        } else{
+            promptAgain = true;
+            strResults = "Sorry, that product was not found in our inventory.";
+        }
+        return strResults;
+    }
 
 
-    //Retrieve current price from JSON
-    //Retrieve current quantity from JSON
-    //If found, Print product name, price, & quantity
-    //If not found print out not found message and prompt again
+
+
+
+
 
 }

@@ -1,5 +1,7 @@
 @startuml
 class App{
+promptAgain()
+print()
 }
 
 class Input{
@@ -19,7 +21,8 @@ class Items{
 
 class JSONRecord{
 -itemList: ArrayList
-+importJson
++promptAgain: boolean
++importJson()
 +searchList()
 +printSearchResults()
 }

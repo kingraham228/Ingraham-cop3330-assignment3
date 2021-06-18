@@ -8,6 +8,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JSONRecordTest {
@@ -18,6 +21,14 @@ class JSONRecordTest {
     void importJSON() {
         JSONRecord test = new JSONRecord();
         test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        Products.Items testItem = testArray.get(0);
+        String actual = testItem.name;
+        String expected = "Widget";
+
+        assertEquals(expected,actual);
+
+
 
     }
 }

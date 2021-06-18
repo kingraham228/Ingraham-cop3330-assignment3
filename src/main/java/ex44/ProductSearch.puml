@@ -6,23 +6,27 @@ class Input{
 +getProductName()
 }
 
-class Product{
--name: String
--price: String
--quantity: String
+class Products{
+-products: ArrayList
+
+}
+
+class Items{
++name: String
++price: String
++quantity: String
 }
 
 class JSONRecord{
--List: Product
-+getProductRecord()
-+openJSON()
-+makeList()
+-itemList: ArrayList
++importJson
 +searchList()
 +printSearchResults()
 }
 
 App o-- Input
 App o-- JSONRecord
-JSONRecord *-- Product
+JSONRecord *-- Products
+Products *-- Items
 
 @enduml

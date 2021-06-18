@@ -6,6 +6,9 @@ package ex45;
 public class App {
     public static void main(String [] args){
         //Ask user for the output file name
+        KeyboardInput userIn = new KeyboardInput();
+        String outputFile = userIn.getOutputFileName();
+        System.out.println(outputFile);
         //Read text file
         //search for "utilize"
         //replace "utilize" with "use"

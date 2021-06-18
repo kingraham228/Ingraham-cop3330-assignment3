@@ -1,3 +1,29 @@
 @startuml
+class App{
+-inputFile: String
+print()
+}
 
+class Files{
+-fileOutName: String
+-fileData: ArrayList
+getFilePath()
+fileImport()
+getFileData()
+fileOut()
+}
+
+class WordFinder{
+-searchWord: String
+-replaceWord: String
+searchAndReplace()
+}
+
+class KeyboardInput{
+getOutputFileName()
+}
+
+App o-- Files
+App o-- WordFinder
+App o-- KeyboardInput
 @enduml

@@ -28,7 +28,33 @@ class JSONRecordTest {
 
         assertEquals(expected,actual);
 
+    }
 
+    @Test
+    @DisplayName("price Test")
+    void importJSON_priceTest() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        Products.Items testItem = testArray.get(1);
+        double actual = testItem.price;
+        double expected = 15.00;
+
+        assertEquals(expected,actual,.001);
+
+    }
+
+    @Test
+    @DisplayName("quantity Test")
+    void importJSON_quantityTest() {
+        JSONRecord test = new JSONRecord();
+        test.importJSON();
+        ArrayList<Products.Items> testArray = test.getItemList();
+        Products.Items testItem = testArray.get(2);
+        int actual = testItem.quantity;
+        int expected = 10;
+
+        assertEquals(expected,actual,.001);
 
     }
 }

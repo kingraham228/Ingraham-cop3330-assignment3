@@ -4,40 +4,39 @@ package ex44;
  *  Copyright 2021 Kate Ingraham
  */
 
+
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.Map;
 
 public class JSONRecord {
-    ArrayList<Product> productRecord = new ArrayList<>();
 
     //Import JSON file into a string
-    public ArrayList<String> importJSON(){
-        ArrayList<String> fileData = new ArrayList<>();
-        try(Scanner input = new Scanner("src/main/java/ex44/exercise44_input.json")){
-            while (input.hasNext()){
-                String nextString = input.nextLine();
-                System.out.println(nextString);
-                fileData.add(nextString);
-            }
+    public void importJSON()  {
+    try{
+        Gson gson = new Gson();
+
+        Reader reader = Files.newBufferedReader(Paths.get("src/main/java/ex44/exercise44_input.json"));
+
+        Map<String,Products> map = gson.fromJson(reader, Map.class);
+
+        for(Map.Entry<String, Products> entry: map.entrySet()){
+            System.out.println(entry.getKey() + "=" + entry.getValue());
         }
-        catch (NoSuchElementException | IllegalStateException e){
-            e.printStackTrace();
-        }
-        return fileData;
+
+        reader.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
     }
 
-    public ArrayList<Product> getProductRecord() {
-        return productRecord;
     }
+
+
 
     //Search for matching JSON element
     //Retrieve current price from JSON

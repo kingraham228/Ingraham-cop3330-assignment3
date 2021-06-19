@@ -4,15 +4,13 @@ package ex45;
  *  Copyright 2021 Kate Ingraham
  */
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Files {
-    private String fileOutName;
     private ArrayList<String> fileData = new ArrayList<>();
 
     public ArrayList<String> getFileData() {
@@ -37,11 +35,16 @@ public class Files {
 
     }
 
+    //write text to a new file with user-provided name
+    public void fileOut(ArrayList<String> outputText, String fileOutName) {
+        try (Formatter output = new Formatter(fileOutName)) {
+            for (int i = 0; i < outputText.size(); i++) {
+                output.format("%s%n",outputText.get(i));
+            }
 
-    public void fileOut() {
-
+        } catch (SecurityException | FileNotFoundException | FormatterClosedException e) {
+            e.printStackTrace();
+        }
 
     }
-
-
 }

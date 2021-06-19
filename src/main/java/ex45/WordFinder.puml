@@ -5,7 +5,6 @@ print()
 }
 
 class Files{
--fileOutName: String
 -fileData: ArrayList
 getFilePath()
 fileImport()

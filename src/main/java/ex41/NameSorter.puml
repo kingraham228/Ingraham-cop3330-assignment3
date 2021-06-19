@@ -7,11 +7,10 @@ class Person{
 }
 
 class Record{
-- people : List
+- people : ArrayList
 - recordCount : int
 + sortByAlpha()
-+ addPeople()
-+ getListofPeople()
++ getRecord()
 + getRecordCount()
 + printRecordToFile()
 }

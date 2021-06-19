@@ -3,10 +3,10 @@ class App{
 -fileName: String
 }
 class SalRecord{
--people: List
+-record: ArrayList
 -recordCount: int
-+addPeople();
-+printPeople();
++getRecord()
++printRecord();
 }
 
 class Employee{

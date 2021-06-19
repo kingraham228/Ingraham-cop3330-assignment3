@@ -22,8 +22,9 @@ class JSONRecord{
 -itemList: ArrayList
 -promptAgain: boolean
 +importJson()
++getItemList()
 +searchList()
-+getPromptAgain()
++isPromptAgain()
 }
 
 App o-- Input

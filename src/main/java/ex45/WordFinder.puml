@@ -1,7 +1,6 @@
 @startuml
 class App{
 -inputFile: String
-print()
 }
 
 class Files{

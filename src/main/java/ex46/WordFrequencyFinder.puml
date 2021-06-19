@@ -1,6 +1,5 @@
 @startuml
 class App{
-+print()
 }
 
 class FileIn{
@@ -13,7 +12,8 @@ class FileIn{
 class FrequencyFinder{
 -wordMap: Map
 +makeMap()
-+sortMap()
++getWordMap()
++sortbyValue()
 +printHistogram()
 }
 

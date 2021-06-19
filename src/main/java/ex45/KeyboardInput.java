@@ -29,9 +29,10 @@ public class KeyboardInput {
                 inputValidation = 1;
             }
         } while(inputValidation<0);
+        //build the appropriate output path.
        String rootPath =  "src/main/java/ex45/";
-       String fileExtentsion = ".txt";
-       return rootPath+partialName+fileExtentsion;
+       String fileExtension = ".txt";
+       return rootPath+partialName+fileExtension;
 
     }
 

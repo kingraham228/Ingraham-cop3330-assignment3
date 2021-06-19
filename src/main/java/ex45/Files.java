@@ -38,8 +38,8 @@ public class Files {
     //write text to a new file with user-provided name
     public void fileOut(ArrayList<String> outputText, String fileOutName) {
         try (Formatter output = new Formatter(fileOutName)) {
-            for (int i = 0; i < outputText.size(); i++) {
-                output.format("%s%n",outputText.get(i));
+            for (String s : outputText) {
+                output.format("%s%n", s);
             }
 
         } catch (SecurityException | FileNotFoundException | FormatterClosedException e) {

@@ -3,14 +3,14 @@ package ex45;
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WordFinderTest {
 

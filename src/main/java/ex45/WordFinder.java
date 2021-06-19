@@ -14,9 +14,8 @@ public class WordFinder {
     //replace "utilize" with "use"
     public ArrayList<String> searchAndReplace(ArrayList<String> fileData){
         ArrayList<String> modifiedFile = new ArrayList<>();
-        for(int i=0; i< fileData.size(); i++){
-            String searchString = fileData.get(i);
-            String replace = searchString.replaceAll(searchWord,replaceWord);
+        for (String searchString : fileData) {
+            String replace = searchString.replaceAll(searchWord, replaceWord);
             modifiedFile.add(replace);
         }
         return modifiedFile;

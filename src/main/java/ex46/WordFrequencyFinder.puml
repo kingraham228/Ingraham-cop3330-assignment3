@@ -1,0 +1,22 @@
+@startuml
+class App{
++print()
+}
+
+class FileIn{
+-fileData: ArrayList<String>
++getFilePath()
++importFile()
++getFileData()
+}
+
+class FrequencyFinder{
+-wordMap: Map
++makeMap()
++sortMap()
++printHistogram()
+}
+
+App o-- FileIn
+App o-- FrequencyFinder
+@enduml

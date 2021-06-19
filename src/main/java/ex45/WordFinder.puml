@@ -6,20 +6,20 @@ print()
 
 class Files{
 -fileData: ArrayList
-getFilePath()
-fileImport()
-getFileData()
-fileOut()
++getFilePath()
++fileImport()
++getFileData()
++fileOut()
 }
 
 class WordFinder{
 -searchWord: String
 -replaceWord: String
-searchAndReplace()
++searchAndReplace()
 }
 
 class KeyboardInput{
-getOutputFileName()
++getOutputFileName()
 }
 
 App o-- Files

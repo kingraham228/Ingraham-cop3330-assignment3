@@ -3,13 +3,14 @@ package ex46;
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FileInTest {
 
@@ -25,7 +26,7 @@ class FileInTest {
         String actual = fileData.get(0);
         String expected = "badger";
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -37,10 +38,10 @@ class FileInTest {
         ex46.fileImport(inputFile);
         ArrayList<String> fileData = ex46.getFileData();
 
-        String actual = fileData.get((fileData.size()-1));
+        String actual = fileData.get((fileData.size() - 1));
         String expected = "badger";
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -55,6 +56,6 @@ class FileInTest {
         String actual = fileData.get(6);
         String expected = "snake";
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 }

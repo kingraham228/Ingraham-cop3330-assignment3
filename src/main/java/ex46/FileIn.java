@@ -3,6 +3,7 @@ package ex46;
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -17,6 +18,7 @@ public class FileIn {
     public ArrayList<String> getFileData() {
         return fileData;
     }
+
     public Path getFilePath(String fileName) {
         return Paths.get(fileName);
     }

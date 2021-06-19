@@ -3,6 +3,7 @@ package ex46;
  *  UCF COP3330 Summer 2021 Assignment 3 Solution
  *  Copyright 2021 Kate Ingraham
  */
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +11,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FrequencyFinderTest {
 
@@ -25,12 +26,12 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> testMap = wordFreq.getWordMap();
 
         int actual = testMap.get("badger");
         int expected = 7;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -45,12 +46,12 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> testMap = wordFreq.getWordMap();
 
         int actual = testMap.get("mushroom");
         int expected = 2;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -65,12 +66,12 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> testMap = wordFreq.getWordMap();
 
         int actual = testMap.get("snake");
         int expected = 1;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -85,13 +86,13 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
-        Map<String,Integer> sortedMap = wordFreq.sortbyValue(testMap);
+        Map<String, Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> sortedMap = wordFreq.sortbyValue(testMap);
 
         int actual = sortedMap.get("zebra");
         int expected = 8;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -106,14 +107,14 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
-        Map<String,Integer> sortedMap = wordFreq.sortbyValue(testMap);
+        Map<String, Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> sortedMap = wordFreq.sortbyValue(testMap);
         wordFreq.printHistogram(sortedMap);
 
         int actual = sortedMap.get("zebra");
         int expected = 8;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 
@@ -128,14 +129,14 @@ class FrequencyFinderTest {
 
         FrequencyFinder wordFreq = new FrequencyFinder();
         wordFreq.makeMap(fileData);
-        Map<String,Integer> testMap = wordFreq.getWordMap();
-        Map<String,Integer> sortedMap = wordFreq.sortbyValue(testMap);
+        Map<String, Integer> testMap = wordFreq.getWordMap();
+        Map<String, Integer> sortedMap = wordFreq.sortbyValue(testMap);
         wordFreq.printHistogram(sortedMap);
 
         int actual = sortedMap.get("mushroom");
         int expected = 2;
 
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
 
     }
 }
